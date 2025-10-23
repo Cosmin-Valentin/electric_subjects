@@ -1,0 +1,185 @@
+/* Paleta Minimalistă: Doar alb, negru și nuanțe de gri */
+:root {
+    --primary-color: #333;       /* Titluri și text principal */
+    --secondary-color: #777;     /* Text secundar/footer */
+    --background-color: #FFF;    /* Fundal principal */
+    --section-bg: #F9F9F9;      /* Fundal secțiuni (foarte puțin contrast) */
+    --border-color: #DDD;        /* Linii discrete */
+}
+
+/* Reset și setări de bază */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.6;
+    color: var(--primary-color);
+    background-color: var(--background-color);
+    font-size: 16px;
+}
+
+/* Stiluri pentru Header-ul Principal - Minimal */
+.main-header {
+    background-color: var(--background-color);
+    color: var(--primary-color);
+    padding: 2.5rem 1rem 1.5rem;
+    text-align: center;
+    border-bottom: 1px solid var(--border-color); /* Linie subtilă de separare */
+}
+
+.main-header h1 {
+    margin-bottom: 0.25rem;
+    font-size: 2.2rem;
+    font-weight: 300; /* Subțiere pentru un look modern */
+}
+
+.main-header p {
+    font-size: 1rem;
+    color: var(--secondary-color);
+}
+
+/* Containerul de Conținut */
+#content-container {
+    max-width: 750px; /* Lățime restrânsă pentru o citire mai bună (Minimal) */
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+/* Secțiunile de Subiecte - Fără Umbre, Contrast Redus */
+.topic-section {
+    background-color: var(--section-bg);
+    padding: 2rem 1.5rem;
+    margin-bottom: 2rem;
+    border: 1px solid var(--border-color); /* Contur discret */
+    border-radius: 4px;
+}
+
+.topic-title {
+    color: var(--primary-color);
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+    font-weight: 500; /* Nu este extrem de bold */
+}
+
+/* Stiluri pentru articole și text */
+article {
+    margin-bottom: 2rem;
+}
+
+h3 {
+    color: var(--primary-color);
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+    font-size: 1.3rem;
+    font-weight: 500;
+}
+
+p {
+    margin-bottom: 1rem;
+    text-align: justify;
+}
+
+ul {
+    margin-left: 1.5rem;
+    padding-left: 0;
+    list-style-type: none; /* Elimină bulinele clasice */
+    margin-bottom: 1rem;
+}
+
+li {
+    margin-bottom: 0.8rem;
+    padding-left: 1rem;
+    position: relative;
+}
+
+/* Stil minimalist pentru elementele din listă (folosim un punct simplu) */
+li::before {
+    content: "—"; /* Un tiret în loc de bullet */
+    color: var(--primary-color);
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-weight: bold;
+}
+
+/* Evidențiere text (înlocuind marcajul ** din HTML) */
+.topic-section p strong,
+.topic-section li strong {
+    font-weight: 600; /* Evidențiere prin greutate, nu culoare/fundal */
+}
+
+/* Stiluri pentru Concluzie */
+.topic-conclusion p {
+    font-style: italic;
+    font-weight: 400;
+    border-top: 1px solid var(--border-color);
+    padding-top: 1.5rem;
+    margin-top: 2rem;
+}
+
+.formula {
+    font-weight: 600; /* Asigură că formula este bold, ca și termenii importanți */
+    font-family: monospace, Courier, "Lucida Console"; /* Font uniform pentru formule */
+    /* Poate fi adăugat un background subtil dacă se dorește: */
+    /* background-color: #EEE; */ 
+    /* padding: 2px 4px; */
+    /* border-radius: 3px; */
+}
+
+.symbol-cc, .symbol-ca {
+    font-weight: 600;
+    color: var(--primary-color); /* Folosește culoarea titlului pentru evidențiere */
+    padding-right: 5px;
+}
+
+/* Footer-ul Site-ului */
+.site-footer {
+    text-align: center;
+    padding: 1.5rem;
+    background-color: var(--section-bg);
+    color: var(--secondary-color);
+    font-size: 0.85rem;
+    border-top: 1px solid var(--border-color);
+}
+
+/* Responivitate pentru ecrane mai mici (Mobile First Approach) */
+@media (max-width: 600px) {
+    body {
+        font-size: 15px; /* Text puțin mai mic pe mobil */
+    }
+    
+    .main-header h1 {
+        font-size: 1.8rem;
+    }
+
+    .topic-section {
+        padding: 1rem;
+    }
+    
+    .topic-section strong {
+        font-weight: 600; 
+    }
+
+    .topic-section p sub, 
+    .topic-section p sup {
+        line-height: 0;
+    }
+
+    .topic-conclusion strong {
+        font-weight: 700;
+    }
+
+    .topic-title {
+        font-size: 1.5rem;
+    }
+    
+    h3 {
+        font-size: 1.2rem;
+    }
+}
